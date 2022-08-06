@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import AboutUs from './AboutUs';
+
 function Header() {
   return (
     <div className='Header' style={{
@@ -5,22 +8,27 @@ function Header() {
       flexDirection: 'row',
       marginLeft: 30,
     }}>
-      <p style={{
+      <Link to='/' style={{
         fontSize: 30,
-      }}>Full Stack-ing Development</p>
+        textDecoration: 'none',
+      }}>Full Stack-ing Development</Link>
       <div style={{
         display: 'flex',
         flexDirection: 'row',
         marginLeft: 140,
         marginTop: 10,
       }}>
-        <p style={{
-          fontSize: 20,
-        }}>About us</p>
-        <p style={{
-          fontSize: 20,
-          marginLeft: 80,
-        }}>How to contribute</p>
+        <Link to='about'>
+          <p style={{
+            fontSize: 20,
+          }}>About us</p>
+        </Link>
+        <Link to='howtocontribute'>
+          <p style={{
+            fontSize: 20,
+            marginLeft: 80,
+          }}>How to contribute</p>
+        </Link>
       </div>
     </div>
   );
