@@ -3,6 +3,7 @@ function Article() {
     <div className='Article'>
       <p style={{
         fontSize: 40,
+        marginTop: 80,
       }}>Take a look at our main project</p>
     </div>
   )

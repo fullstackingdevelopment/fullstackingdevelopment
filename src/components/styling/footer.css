@@ -1,0 +1,39 @@
+.Footer {
+    height: 40%;
+    width: 100%;
+    background-color: #04030F;
+    position: absolute;
+    bottom: 0em;
+}
+
+#projectsContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 12em;
+}
+
+.projectHeader {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0em;
+}
+
+.projectGithub {
+    height: 3.5em;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+
+.projectName {
+    color: #F6F4F3;
+    font-size: 35px;
+    margin-left: 0.35em;
+}
+
+.projectDescription {
+    color: #F6F4F3;
+    font-size: 18px;
+    position: absolute;
+    left: 2.5em;
+}

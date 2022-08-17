@@ -1,0 +1,9 @@
+img {
+    height: 13em;
+    border-radius: 1em;
+    margin-right: 1em;
+}
+
+img:hover {
+    transform: scale(1.1);
+}

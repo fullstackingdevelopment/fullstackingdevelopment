@@ -1,34 +1,29 @@
 import { Link } from 'react-router-dom';
-import AboutUs from './AboutUs';
+import github from './images/github2.png';
+import './styling/header.css';
 
-function Header() {
+function Header({ linkOne='/', linkTwo='about', linkThree='contribute' }) {
   return (
-    <div className='Header' style={{
-      display: 'flex',
-      flexDirection: 'row',
-      marginLeft: 30,
-    }}>
-      <Link to='/' style={{
-        fontSize: 30,
-        textDecoration: 'none',
-      }}>Full Stack-ing Development</Link>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        marginLeft: 140,
-        marginTop: 10,
-      }}>
-        <Link to='about'>
-          <p style={{
-            fontSize: 20,
-          }}>About us</p>
+    <div className='Header'>
+      <Link className='link' id='fsdLink' to={linkOne}>
+        Full Stack-ing Development</Link>
+      <div id='linkContainer'>
+        <Link className='link' to={linkTwo}>
+          <p>About us</p>
         </Link>
-        <Link to='howtocontribute'>
+        <Link className='link' to={linkThree}>
           <p style={{
-            fontSize: 20,
             marginLeft: 80,
           }}>How to contribute</p>
         </Link>
+        <a href='https://github.com/fullstackingdevelopment' target='_blank' style={{
+          position: 'absolute',
+          right: 100,
+        }}>
+          <img src={github} style={{
+            height: 60,
+          }}/>
+        </a>
       </div>
     </div>
   );
