@@ -44,7 +44,7 @@ export const NavBar = () => {
             <img src={FSDlogo} alt="Logo" />
           </Navbar.Brand>
           
-          <p> Huge thank you to <b>@judygab</b> <br/><a href="<a>https://github.com/judygab/web-dev-projects</a>">github.com/judygab/web-dev-projects</a><br/>For this website inspiration </p>
+          <p> Huge thank you to <b>@judygab</b> <br/><a href="https://github.com/judygab/web-dev-projects" target="_blank">github.com/judygab/web-dev-projects</a><br/>For this website inspiration </p>
         
 
           <Navbar.Toggle aria-controls="basic-navbar-nav">
