@@ -13,14 +13,53 @@ export const NavBar = () => {
 
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  
+  const [windowSizeX, setwindowSizeX] = useState(window.innerWidth);
+
+  let showExtras;
+  let navClass;
+  let variant;
+
+  if (windowSizeX[0] < 700) {
+    showExtras = false;
+    navClass = 'scrolled-mobile';
+    variant = 'dark';
+  }
+  else {
+    showExtras = true;
+    navClass = 'scrolled';
+    variant = 'light';
+  }
 
   useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+
+    function updateSize() {
+      setwindowSizeX([window.innerWidth, window.innerHeight]);
+    }
+
+    window.addEventListener('resize', updateSize);
+    console.log(windowSizeX[0]);
+
+    return () => {
+      window.removeEventListener('resize', updateSize);
+    }
+  }, [windowSizeX])
+
+  const [windowSizeY, setwindowSizeY] = useState(window.innerHeight);
+  
+  if (windowSizeY > 100) {
+    console.log("bigger");
+    
+  }
+  else {
+    console.log("back");
+  }
+
+  useEffect(() => {
+
+    function onScroll() {
+      console.log(window.scrollY);
+      setwindowSizeY(window.scrollY);
     }
 
     window.addEventListener("scroll", onScroll);
@@ -35,23 +74,41 @@ export const NavBar = () => {
   return (
     <Router>
 
-     
 
-      <Navbar style={{padding: '2px'}} variant="light" bg={'light'}  expand="lg" className={scrolled ? "scrolled" : ""}>
+
+      <Navbar style={{ padding: '2px',  }} variant={variant} bg={variant} expand="lg" className={navClass}>
         <Container>
 
-          <Navbar.Brand href="/">
-            <img src={FSDlogo} alt="Logo" />
-          </Navbar.Brand>
-          
-          <p> Huge thank you to <b>@judygab</b> <br/><a href="https://github.com/judygab/web-dev-projects" target="_blank">github.com/judygab/web-dev-projects</a><br/>For this website inspiration </p>
-        
+          {showExtras ?
+            <>
+
+              <Navbar.Brand href="/">
+                <img src={FSDlogo} alt="Logo" />
+              </Navbar.Brand>
+
+              <p> Huge thank you to <b>@judygab</b> <br /><a href="<a>https://github.com/judygab/web-dev-projects</a>">github.com/judygab/web-dev-projects</a><br />For this website inspiration </p>
+            </>
+
+            :
+            <></>
+          }
+
 
           <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span  className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
 
           <Navbar.Collapse id="basic-navbar-nav">
+
+          {!showExtras ?
+            <>
+
+              <p> Huge thank you to <b>@judygab</b> <br /><a href="<a>https://github.com/judygab/web-dev-projects</a>">github.com/judygab/web-dev-projects</a><br />For this website inspiration </p>
+            </>
+
+            :
+            <></>
+          }
 
             <Nav className="ms-auto">
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>About</Nav.Link>
@@ -66,7 +123,7 @@ export const NavBar = () => {
                 <a href="#"><img src={navIcon3} alt="" /></a>
               </div>
               <HashLink to='#connect'>
-                <button className="vvd"><span>Code together!</span></button>
+                <button className="vvd"><span>Contact Us!</span></button>
               </HashLink>
             </span>
           </Navbar.Collapse>
