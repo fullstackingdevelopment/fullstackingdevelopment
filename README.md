@@ -5,7 +5,6 @@ This is the source code repository for [Full Stack-ing Development's website](ht
 Clone this repository:
 ```powershell
 git clone git@github.com:fullstackingdevelopment/fullstackingdevelopment.git
-powershell
 ```
 
 Enter the directory
