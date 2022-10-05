@@ -54,13 +54,15 @@ export const Projects = () => {
       title: "Antonio Ericks Project",
       description: "Design & Development",
       imgUrl: fsdLogo,
+      webLink: ""
     },
     {
       title: "Giomoscato.com",
       description: "Developed a React portfolio application to demonstrate core web & coding skills, api implementations, and 3D interfaces.",
       imgUrl: projGioImg1,
+      webLink: "https://giomoscato.com/#/"
     },
-    
+
   ];
 
   const featuredProjects = [
@@ -79,7 +81,7 @@ export const Projects = () => {
       description: "The GMAapi ( Gio M apps API ) was build with the purpose of security, re-usability, and ease in mind. It is part of our project ecosystem and was originally developed for FSD / GMA applications. We made the API available publically as a proof of concept and ease of use.",
       imgUrl: projGioImg2,
     },
-    
+
   ];
 
   const projects = [
@@ -117,76 +119,90 @@ export const Projects = () => {
 
   return (
     <section className="project" id="project">
+
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Projects that our team is currently working on or completed. This includes team based projects as well as personal.</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">Featured Projects</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Personal Projects</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">All Projects</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          featuredProjects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="second">
+
+            <div className="animate__animated animate__fadeIn">
+              <h2>Projects</h2>
+              <p>Projects that our team is currently working on or completed. This includes team based projects as well as personal.</p>
+
+              <Tab.Container id="projects-tabs" defaultActiveKey="first">
+
+                <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+
+                  <Nav.Item>
+                    <Nav.Link eventKey="first">Featured Projects</Nav.Link>
+                  </Nav.Item>
+
+                  <Nav.Item>
+                    <Nav.Link eventKey="second">Personal Projects</Nav.Link>
+                  </Nav.Item>
+
+                  <Nav.Item>
+                    <Nav.Link eventKey="third">All Projects</Nav.Link>
+                  </Nav.Item>
+
+                </Nav>
+
+                <Tab.Content id="slideInUp" className={"animate__animated animate__slideInUp"}>
+
+                  <Tab.Pane eventKey="first">
                     <Row>
-                        {
-                          personalProjects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
+                      {
+                        featuredProjects.map((project, index) => {
+                          return (
+                            <ProjectCard
+                              key={index}
+                              {...project}
+                            />
+                          )
+                        })
+                      }
+                    </Row>
+                  </Tab.Pane>
+
+                  <Tab.Pane eventKey="second">
                     <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
-            </TrackVisibility>
+                      {
+                        personalProjects.map((project, index) => {
+                          return (
+
+                            <ProjectCard
+                              key={index}
+                              {...project}
+                            />
+
+                          )
+                        })
+                      }
+                    </Row>
+                  </Tab.Pane>
+
+                  <Tab.Pane eventKey="third">
+                    <Row>
+                      {
+                        projects.map((project, index) => {
+                          return (
+                            <ProjectCard
+                              key={index}
+                              {...project}
+                            />
+                          )
+                        })
+                      }
+                    </Row>
+                  </Tab.Pane>
+
+                </Tab.Content>
+              </Tab.Container>
+            </div>
+
           </Col>
         </Row>
       </Container>
+
       <img className="background-image-right" src={colorSharp2}></img>
     </section>
   )
