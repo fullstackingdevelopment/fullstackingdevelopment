@@ -10,9 +10,11 @@ const date = new Date();
 export const Footer = () => {
   return (
     <footer className="footer">
-      <Container>
+      <Container style={{
+        marginTop: '2.5%'
+      }}>
         <Row className="align-items-center">
-          
+
           <Col size={12} sm={6}>
             <img style={{ padding: '5px', margin: '5px'}} src={logo} alt="Logo" />
           </Col>

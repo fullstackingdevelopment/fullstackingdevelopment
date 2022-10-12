@@ -93,6 +93,7 @@ export const NavBar = () => {
             <></>
           }
 
+
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
