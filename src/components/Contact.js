@@ -10,7 +10,7 @@ export const Contact = () => {
 
   const socialMedia = [
     {
-      Dev: "Antionio-erick",
+      Dev: "Antonio Erick",
       Gittitle: "@antonio-erick",
       Yttitle: "",
       GitimgUrl: Ghlogo,
