@@ -277,10 +277,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-size: fit;
   background-repeat: no-repeat;
 }
-.banner:hover {
 
-  background-repeat: repeat;
-}
 .banner-mobile {
   margin-top: 0;
   padding: 200px 0 0px 0;
