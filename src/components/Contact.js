@@ -12,11 +12,11 @@ export const Contact = () => {
     {
       Dev: "Antonio Erick",
       Gittitle: "@antonio-erick",
-      Yttitle: "",
+      Yttitle: "@Antonio",
       GitimgUrl: Ghlogo,
       YTimgUrl: Ytlogo,
       GitwebLink: "https://github.com/antonio-erick",
-      YtwebLink: "",
+      YtwebLink: "https://www.youtube.com/channel/UCdgXbZpOcUWBYVLC7WQsajg",
 
     },
     {
