@@ -43,7 +43,7 @@ export const ContactCard = ({ Dev, Gittitle, Yttitle, GitimgUrl, YTimgUrl, Gitwe
         <div style={{ border: '1px solid white', padding: '5px', margin: '5px', flexGrow: '1', display: 'flex', backgroundColor: 'white', borderRadius: '5px' }} className="item">
           <img style={{ height: logoHeight, width: logoWidth }} src={GitimgUrl} />
           <br></br>
-          { !showMobileBtn && <a style={{ color: 'black', marginLeft: '20px' }} href={GitwebLink} >{Gittitle}</a> } 
+          { !showMobileBtn && <a style={{ color: 'black', marginLeft: '20px' }} href={GitwebLink} target="_blank">{Gittitle}</a> } 
           { showMobileBtn && <Button style={{ color: 'white', marginLeft: '20px', backgroundColor:'black' }} >{Gittitle}</Button>  }
         </div>
 
@@ -53,7 +53,7 @@ export const ContactCard = ({ Dev, Gittitle, Yttitle, GitimgUrl, YTimgUrl, Gitwe
           <img style={{ height: logoHeight, width: logoWidth }} src={YTimgUrl} />
           <br></br>
         
-          { !showMobileBtn && <a style={{ color: 'black', marginLeft: '20px' }} href={YtwebLink} >{Yttitle}</a> }
+          { !showMobileBtn && <a style={{ color: 'black', marginLeft: '20px' }} href={YtwebLink} target="_blank">{Yttitle}</a> }
           { showMobileBtn && <Button style={{ color: 'white', marginLeft: '20px', backgroundColor:'black' }} >{Yttitle}</Button>  }
          
         </div>
